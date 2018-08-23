@@ -1,0 +1,18 @@
+
+ Performance counter stats for 'bash 01_multipr.sh':
+
+      46101,044805      task-clock (msec)         #    0,653 CPUs utilized
+            70.679      context-switches          #    0,002 M/sec
+             1.164      cpu-migrations            #    0,025 K/sec
+         4.484.895      page-faults               #    0,097 M/sec
+   <not supported>      cycles
+   <not supported>      instructions
+   <not supported>      branches
+   <not supported>      branch-misses
+
+      70,638787913 seconds time elapsed
+
+perf stat bash 01_multipr.sh 2> 03_perf-multipr.log
+
+Como genera un proceso por cada ejecución del for, aumentan notablemente
+los cambios de contexto con respecto al script mono proceso.

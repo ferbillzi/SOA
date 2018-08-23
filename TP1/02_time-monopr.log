@@ -1,0 +1,17 @@
+
+real	0m0.122s
+user	0m0.102s
+sys	0m0.020s
+
+(time bash 01_monopr.sh) 2> 02_time-monopr.log
+
+real -> Este es todo el tiempo transcurrido, incluidos los intervalos de tiempo
+        utilizados por otros procesos y el tiempo que el proceso permanece
+        bloqueado (por ejemplo, si está esperando a que se complete la E/S).
+
+user -> Este es solo el tiempo de CPU real utilizado en la ejecución del
+        proceso. Otros procesos y el tiempo que el proceso permanece bloqueado
+        no cuentan para esta cifra.
+
+sys -> Es el tiempo que la CPU pasó en modo kernel durante la ejecución del
+       proceso.

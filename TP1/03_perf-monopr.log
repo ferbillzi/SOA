@@ -1,0 +1,26 @@
+
+ Performance counter stats for 'bash 01_monopr.sh':
+
+        109,875924      task-clock (msec)         #    0,515 CPUs utilized
+            12.593      context-switches          #    0,115 M/sec
+                 2      cpu-migrations            #    0,018 K/sec
+               116      page-faults               #    0,001 M/sec
+   <not supported>      cycles
+   <not supported>      instructions
+   <not supported>      branches
+   <not supported>      branch-misses
+
+       0,213345044 seconds time elapsed
+
+perf stat bash 01_monopr.sh 2> 03_perf-monopr.log
+Ejecuta un comando y recopila estadísticas del contador de rendimiento.
+
+Cambio de contexto: La activación del sistema operativo se realiza mediante el
+mecanismo de las interrupciones. Cuando se produce una interrupción se
+realizan las dos operaciones siguientes:
+Se salva el estado del procesador en el correspondiente PCB.
+Se pasa a ejecutar la rutina de tratamiento de interrupción del sistema
+operativo. Llamaremos cambio de contexto (context switch)al conjunto de
+estas operaciones. El tiempo de conmutación de contexto es exclusivamente gasto
+extra (overhead), porque el sistema no realiza trabajo útil durante
+la conmutación.

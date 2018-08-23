@@ -1,0 +1,8 @@
+
+real	0m9.145s
+user	0m17.664s
+sys	0m6.848s
+
+(time bash 01_multipr.sh) 2> 02_time-multipr.log
+
+Se incrementaron todos los tiempos con respecto al script monoproceso.
