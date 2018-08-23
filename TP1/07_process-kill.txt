@@ -1,0 +1,36 @@
+En la primer consola se ejecuta el script:
+
+  root@vm:~/Documentos/SOA/TP1# bash 07_process-trap.sh
+
+El mismo comienza la ejecucion indicando su PID, luego
+imprime un punto cada un segundo.
+
+  22388
+  .
+  .
+  .
+  .
+  .
+  .
+
+Desde la segunda consola mediante el comando kill le enviamos
+las señales que seran capturadas por el script
+
+  root@vm:~/Documentos/SOA/TP1# kill -SIGINT 22388
+
+  .
+  .
+  .
+   Interrupcion detectada
+  .
+  .
+  .
+
+  root@vm:~/Documentos/SOA/TP1# kill -SIGTSTP 22388
+
+  .
+  .
+  .
+  .
+   Suspender ejecucion
+   Fin de script
