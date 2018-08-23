@@ -8,7 +8,7 @@ fg %1 -> continúa un trabajo detenido ejecutándolo en primer plano
 ^Z -> [1]+  Se detiene el reloj
 
 bg %1 -> continua el trabajo detenido ejecutándolo en segundo plano
-         (puedo seguir usando la consola)
+          (puedo seguir usando la consola)
 
 Para iniciar el proceso directamente en segundo plano se agrega el
 & al final de la linea "xclock -d -update -1 &"
