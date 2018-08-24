@@ -21,6 +21,6 @@ realizan las dos operaciones siguientes:
 Se salva el estado del procesador en el correspondiente PCB.
 Se pasa a ejecutar la rutina de tratamiento de interrupción del sistema
 operativo. Llamaremos cambio de contexto (context switch)al conjunto de
-estas operaciones. El tiempo de conmutación de contexto es exclusivamente gasto
-extra (overhead), porque el sistema no realiza trabajo útil durante
+estas operaciones. El tiempo de conmutación de contexto es exclusivamente
+gasto extra (overhead), porque el sistema no realiza trabajo útil durante
 la conmutación.
