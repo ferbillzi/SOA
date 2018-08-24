@@ -1,0 +1,62 @@
+a) pthread_create()
+
+Los procesos normalmente corren como un hilo único. La creación de un nuevo hilo
+se logra vía pthread_create.
+
+# include <pthread.h>
+  int pthread_create(pthread_t * restrict tidp,
+  const pthread_attr_t * restrict attr,
+  void * ( * start_routine ) (void *),
+  void * restrict arg);
+
+tidp: salida, puntero a id del hilo
+attr: entrada, para definir atributos del hilo, null para default
+start_routine: entrada, función a correr por el hilo
+arg: entrada, argumento de la función del hilo
+La función debe retornar un * void, el cual es interpretado
+como el estatus de término por pthread_join
+
+b) pthread_join()
+
+int pthread_join(pthread_t tid, void ** rval_ptr);
+
+El hilo llamante se bloquea hasta el término del hilo indicado.
+Si el hilo en cuestión es cancelado, rval_prt toma el valor
+PTHREAD_CANCELED
+Si no estamos interesados en el valor retornado, poner NULL.
+
+c) pthread_mutex_lock()
+
+int  pthread_mutex_lock(pthread_mutex_t * mutex);
+
+Permite solicitar acceso al mutex, el hilo se bloquea hasata su obtención
+
+d) pthread_mutex_trylock()
+
+int  pthread_mutex_trylock(pthread_mutex_t * mutex);
+
+permite solicitar acceso al mutex,  el hilo retorna inmediatamente. El valor
+retrnado indica si otro hilo lo tiene.
+
+e) pthread_cond_wait()
+
+int pthread_cond_wait(pthread_cond_t *restrict cond,
+                      pthread_mutex_t *restrict mutex);
+
+Cuando un hilo invoca a pthread_cond_wait, éste libera el candado del mutex
+usado en el argumento. Más adelante cuando es despertado, éste candado es
+devuelto a la hebra.
+
+f) pthread_cond_signal()
+
+int pthread_cond_signal(pthread_cond_t *restrict cond);
+
+La función pthread_cond_signal  despertará a una hebra que espera con la misma
+variable de condición.
+
+g) pthread_cond_broadcast()
+
+int pthread_cond_broadcast(pthread_cond_t *restrict cond);
+
+La función pthread_cond_broadcast despierta a todas la hebras esperando por
+la condición.
